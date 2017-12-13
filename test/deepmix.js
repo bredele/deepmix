@@ -42,3 +42,42 @@ test('override existing object property', assert => {
     foo: 'boop'
   })
 })
+
+test('copy properties recursively', assert => {
+  assert.plan(1)
+  assert.deepEqual(mixin({
+    foo: {
+      bar: 'beep'
+    }
+  }, {
+    foo: {
+      beep: 'boop'
+    }
+  }), {
+    foo: {
+      bar: 'beep',
+      beep: 'boop'
+    }
+  })
+})
+
+test('copy properties recursively even when origin key is not an object', assert => {
+  assert.plan(1)
+  assert.deepEqual(mixin({
+    foo: {
+      bar: 'beep'
+    }
+  }, {
+    foo: {
+      bar: {
+        hello: 'world'
+      }
+    }
+  }), {
+    foo: {
+      bar: {
+        hello: 'world'
+      }
+    }
+  })
+})
