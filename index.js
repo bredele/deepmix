@@ -5,6 +5,9 @@
  * @api public
  */
 
-module.exports = function () {
-  // do something
+module.exports = function (to, from) {
+  Object.keys(from).map(key => {
+    to[key] = from[key]
+  })
+  return to
 }

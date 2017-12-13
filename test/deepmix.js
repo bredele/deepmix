@@ -4,10 +4,17 @@
  */
 
 const test = require('tape')
+const mixin = require('..')
+
 
 test('this is an example', assert => {
   assert.plan(1)
-  assert.equal(1 + 2, 3)
+  assert.deepEqual(mixin({
+    foo: 'bar'
+  }, {
+    beep: 'boop'
+  }), {
+    foo: 'bar',
+    beep: 'boop'
+  })
 })
-
-  

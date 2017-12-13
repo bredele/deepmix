@@ -5,7 +5,7 @@
 [![Downloads](https://img.shields.io/npm/dm/deepmix.svg?style=flat-square)](http://npm-stat.com/charts.html?package=deepmix)
 [![pledge](https://bredele.github.io/contributing-guide/community-pledge.svg)](https://github.com/bredele/contributing-guide/blob/master/community.md)
 
-The reason behind this module is to provide a library that truly mix objects together recursively. 
+The reason behind this module is to provide a library that truly mix objects together recursively and does not skip objects contained in arrays.
 
 
 ## Usage
