@@ -113,3 +113,8 @@ test('copy properties recursively when mix and match of strings and objects', as
     }
   })
 })
+
+test('should override array if key is not an object', assert => {
+  assert.plan(1)
+  assert.deepEqual(mixin(['hello'], ['world']), ['world'])
+})
