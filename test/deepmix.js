@@ -81,3 +81,35 @@ test('copy properties recursively even when origin key is not an object', assert
     }
   })
 })
+
+test('copy properties recursively when mix and match of strings and objects', assert => {
+  assert.plan(1)
+  assert.deepEqual(mixin({
+    foo: {
+      bar: {
+        beep: 'boop',
+        boop: {
+          hello: 'world'
+        }
+      }
+    }
+  }, {
+    foo: {
+      bar: {
+        beep: {
+          john: 'doe'
+        },
+        boop: 'smith'
+      }
+    }
+  }), {
+    foo: {
+      bar: {
+        beep: {
+          john: 'doe'
+        },
+        boop: 'smith'
+      }
+    }
+  })
+})
