@@ -1,0 +1,28 @@
+{
+  "name": "deepmix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bredele/deepmix.git"
+  },
+  "keywords": [
+    "mixin",
+    "merge",
+    "deep",
+    "recursive"
+  ],
+  "author": "Olivier Wietrich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bredele/deepmix/issues"
+  },
+  "homepage": "https://github.com/bredele/deepmix#readme",
+  "devDependencies": {
+    "tape": "*"
+  }
+}
