@@ -118,3 +118,45 @@ test('should override array if key is not an object', assert => {
   assert.plan(1)
   assert.deepEqual(mixin(['hello'], ['world']), ['world'])
 })
+
+test('should recursively mix key of an array if object', assert => {
+  assert.plan(1)
+  assert.deepEqual(mixin([{
+    bar: 'foo'
+  }], [{
+    beep: 'boop'
+  }]), [{
+    bar: 'foo',
+    beep: 'boop'
+  }])
+})
+
+test('should recursively mix arrays and objects', assert => {
+  assert.plan(1)
+  assert.deepEqual(mixin([{
+    bar: 'foo'
+  }, {
+    beep: {
+      john: [{
+        name: 'doe'
+      }]
+    }
+  }], ['just a string', {
+    foo: 'bar',
+    beep: {
+      hello: 'world',
+      john: [{
+        last: 'smith'
+      }, 'some other stuff']
+    }
+  }]), ['just a string', {
+    foo: 'bar',
+    beep: {
+      hello: 'world',
+      john: [{
+        name: 'doe',
+        last: 'smith'
+      }, 'some other stuff']
+    }
+  }])
+})
