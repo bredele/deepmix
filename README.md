@@ -26,6 +26,7 @@ mixin({
 // => {name: 'olivier', properties: [{city; 'calgary', country: 'canada'}]}
 ```
 
+Check out [this module's tests](https://github.com/bredele/deepmix/tree/master/test) for more examples.
 
 ## Installation
 
