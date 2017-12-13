@@ -19,10 +19,23 @@ test('copy new properties from an object to an other', assert => {
   })
 })
 
-test('override existing properties', assert => {
+test('override existing string property', assert => {
   assert.plan(1)
   assert.deepEqual(mixin({
     foo: 'bar'
+  }, {
+    foo: 'boop'
+  }), {
+    foo: 'boop'
+  })
+})
+
+test('override existing object property', assert => {
+  assert.plan(1)
+  assert.deepEqual(mixin({
+    foo: {
+      bar: 'beep'
+    }
   }, {
     foo: 'boop'
   }), {
