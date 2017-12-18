@@ -160,3 +160,35 @@ test('should recursively mix arrays and objects', assert => {
     }
   }])
 })
+
+
+// test('should not change destination object when cloned', assert => {
+//   assert.plan(1)
+//   const dest = {
+//     certs: [
+//       {
+//         properties: 'helloddlllll'
+//       }
+//     ]
+//   }
+//   mixin({...dest}, {
+//     id: 'hello world',
+//     user: {
+//       name: 'foo',
+//       city: 'bar'
+//     },
+//     certs: [{
+//       properties: 'hello',
+//       identity: {
+//         low: 200
+//       }
+//     }]
+//   })
+//   assert.deepEqual(dest, {
+//     certs: [
+//       {
+//         properties: 'helloddlllll'
+//       }
+//     ]
+//   })
+// })
